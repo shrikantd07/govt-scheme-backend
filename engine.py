@@ -199,19 +199,20 @@ def evaluate_eligibility(user_profile: dict):
 
         # Filter Results
         if len(mismatches) == 0:
-            qualified.append({
-                "scheme_name": scheme["name"],
-                "benefit": scheme["benefit"],
-                "link": scheme["link"],
-                "criteria_matched": f"Age {user_age}, Occupation {user_occ}, Category {user_category}"
-            })
-        elif len(mismatches) == 1:
+           qualified.append({
+            "name": scheme["name"],
+            "scheme_name": scheme["name"],
+            "benefit": scheme["benefit"],
+            "link": scheme["link"],
+            "criteria_matched": f"Age {user_age}, Occupation {user_occ}, Category {user_category}"
+        })
+       elif len(mismatches) == 1:
             near_misses.append({
+                "name": scheme["name"],
                 "scheme_name": scheme["name"],
                 "benefit": scheme["benefit"],
                 "bottleneck": mismatches[0]
             })
-
     return rank_schemes(qualified), near_misses
 
 # 4. LLM Reasoning Generator
