@@ -1,9 +1,5 @@
 import os
 from google import genai
-
-os.environ["GEMINI_API_KEY"] = "AIzaSyBNIEc9EpdlYZ_P19CJZzVwDhU04bp3y50"
-from google import genai
-
 # 1. Curated Schemes Database (Coverage)
 SCHEMES_DB = [
     {
