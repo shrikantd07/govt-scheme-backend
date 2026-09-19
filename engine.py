@@ -202,7 +202,7 @@ def evaluate_eligibility(user_profile: dict):
             "link": scheme["link"],
             "criteria_matched": f"Age {user_age}, Occupation {user_occ}, Category {user_category}"
         })
-       elif len(mismatches) == 1:
+        elif len(mismatches) == 1:
             near_misses.append({
                 "name": scheme["name"],
                 "scheme_name": scheme["name"],
